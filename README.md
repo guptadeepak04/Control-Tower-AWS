@@ -1,25 +1,69 @@
-AWS Root
+Control-Tower-AWS/
 │
-├── Management Account
-│     ├── AWS Organizations
-│     ├── AWS Control Tower
-│     └── IAM Identity Center
+├── README.md
 │
-├── Security OU
-│     ├── Log Archive Account
-│     └── Audit Account
+├── docs/
+│   ├── architecture.md
+│   ├── account-strategy.md
+│   ├── networking.md
+│   └── security.md
 │
-├── Infrastructure OU
-│     ├── Shared Services
-│     ├── Networking
-│     └── Backup
+├── organizations/
+│   ├── organization-structure.yaml
+│   ├── ou-structure.yaml
+│   └── account-config.yaml
 │
-├── Sandbox OU
-│     ├── Dev Account
-│     ├── Test Account
-│     └── Demo Account
+├── lza-config/
+│   ├── global-config.yaml
+│   ├── organization-config.yaml
+│   ├── accounts-config.yaml
+│   ├── network-config.yaml
+│   ├── security-config.yaml
+│   └── customizations-config.yaml
 │
-└── Workloads OU
-      ├── Production
-      ├── Non-Production
-      └── Application Accounts
+├── terraform/
+│   ├── modules/
+│   │
+│   ├── networking/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── shared-services/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── workloads/
+│   │   ├── dev/
+│   │   ├── test/
+│   │   ├── uat/
+│   │   └── prod/
+│   │
+│   └── backend.tf
+│
+├── policies/
+│   ├── scp/
+│   │   ├── deny-root.json
+│   │   ├── deny-public-s3.json
+│   │   └── region-restriction.json
+│   │
+│   └── iam/
+│       ├── admin-policy.json
+│       └── readonly-policy.json
+│
+├── cloudformation/
+│   ├── audit-account.yaml
+│   └── logarchive-account.yaml
+│
+├── pipelines/
+│   ├── terraform-plan.yaml
+│   ├── terraform-apply.yaml
+│   └── deployment.yaml
+│
+└── .github/
+    └── workflows/
+        ├── terraform-plan.yml
+        ├── terraform-apply.yml
+        ├── lint.yml
+        └── security-scan.yml 

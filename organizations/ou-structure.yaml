@@ -1,0 +1,25 @@
+organization:
+  root:
+    - Security
+    - Infrastructure
+    - Sandbox
+    - Workloads
+
+Security:
+  - Audit
+  - LogArchive
+
+Infrastructure:
+  - SharedServices
+  - Networking
+  - Backup
+
+Sandbox:
+  - Dev
+  - Test
+  - Demo
+
+Workloads:
+  - Production
+  - NonProduction
+  - ApplicationHello world
