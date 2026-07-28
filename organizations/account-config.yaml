@@ -1,0 +1,49 @@
+mandatoryAccounts:
+
+  - name: Audit
+    description: Audit Account
+    email: deepak+audit@gmail.com
+    organizationalUnit: Security
+
+  - name: LogArchive
+    description: Log Archive Account
+    email: deepak+logarchive@gmail.com
+    organizationalUnit: Security
+
+workloadAccounts:
+
+  - name: SharedServices
+    email: deepak+shared@gmail.com
+    organizationalUnit: Infrastructure
+
+  - name: Networking
+    email: deepak+network@gmail.com
+    organizationalUnit: Infrastructure
+
+  - name: Backup
+    email: deepak+backup@gmail.com
+    organizationalUnit: Infrastructure
+
+  - name: Dev
+    email: deepak+dev@gmail.com
+    organizationalUnit: Sandbox
+
+  - name: Test
+    email: deepak+test@gmail.com
+    organizationalUnit: Sandbox
+
+  - name: Demo
+    email: deepak+demo@gmail.com
+    organizationalUnit: Sandbox
+
+  - name: Production
+    email: deepak+prod@gmail.com
+    organizationalUnit: Workloads
+
+  - name: NonProduction
+    email: deepak+nonprod@gmail.com
+    organizationalUnit: Workloads
+
+  - name: Application
+    email: deepak+app@gmail.com
+    organizationalUnit: Workloads
