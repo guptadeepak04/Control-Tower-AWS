@@ -24,11 +24,11 @@ jobs:
 
           echo "ROOT_ID=$ROOT_ID" >> $GITHUB_ENV
 
-      - name: Create Security OU
-        run: |
-          aws organizations create-organizational-unit \
-          --parent-id $ROOT_ID \
-          --name Security
+      #- name: Create Security OU
+       # run: |
+        #  aws organizations create-organizational-unit \
+         # --parent-id $ROOT_ID \
+          #--name Security 
 
       - name: Create Infrastructure OU
         run: |
