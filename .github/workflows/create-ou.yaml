@@ -29,3 +29,27 @@ jobs:
           aws organizations create-organizational-unit \
           --parent-id $ROOT_ID \
           --name Security
+
+      - name: create Infrastructure OU 
+        run: |
+          aws organizations create-organizational-unit \
+          --parent-id $ROOT_ID\
+          --name Infrastructure
+
+      - name: create Sandbox OU
+        run: |
+          aws organizations create-organizational-unit \
+          --parent-id $ROOT_ID
+          --name Sandbox
+
+      -name: create Non-production OU
+        run: |
+          aws organizations create-organizational-unit \
+          --parent-id $ROOT_ID
+          --name Non-Production
+
+      -name: create Production OU
+        run: |
+          aws organizations create-organizational-unit \
+          --parent-id $ROOT_ID
+          --name Production
