@@ -1,0 +1,31 @@
+name: Create Organizational Units
+
+on:
+  workflow_dispatch
+
+jobs:
+  create-ou:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Get Root ID
+        run: |
+          ROOT_ID=$(aws organizations list-roots \
+          --query 'Roots[0].Id' \
+          --output text)
+
+          echo "ROOT_ID=$ROOT_ID" >> $GITHUB_ENV
+
+      - name: Create Security OU
+        run: |
+          aws organizations create-organizational-unit \
+          --parent-id $ROOT_ID \
+          --name Security

@@ -1,9 +1,36 @@
-organizationalUnits:
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Create organization Unit"
 
-  - name: Security
+Resources:
+  
+  SecurityOU:
+    Type: AWS::Organizations::OrganizationalUnit
+    Properties:
+      Name: Security
+      ParentId: r-ozzn
 
-  - name: Infrastructure
+  InfrastructureOU:
+    Type: AWS::Organizations::OrganizationalUnit
+    Properties:
+      Name: Infrastructure
+      ParentId: r-ozzn
+      
+  SandboxOU:
+    Type: AWS::Organizations::OrganizationsUnit
+    properties:
+      Name: Sandbox
+      ParentId: r-ozzn
 
-  - name: Sandbox
-
-  - name: Workloads
+  Non-ProductionOU:
+    Type: AWS::Organizations::OrganizationalUnit
+    Properties:
+      Name: Non-Production
+      ParentId: r-ozzn
+      
+  ProductionOU:
+    type: AWS::Organizations::OrganizationalUnit
+    properties:
+      Name: Production
+      ParentId: r-ozzn
+   
+    

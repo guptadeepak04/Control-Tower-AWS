@@ -1,25 +1,11 @@
-organization:
-  root:
-    - Security
-    - Infrastructure
-    - Sandbox
-    - Workloads
+organizationalUnits:
 
-Security:
-  - Audit
-  - LogArchive
+- Name: Security
 
-Infrastructure:
-  - SharedServices
-  - Networking
-  - Backup
+- Name: Infrastructure
 
-Sandbox:
-  - Dev
-  - Test
-  - Demo
+- Name: Sandbox
 
-Workloads:
-  - Production
-  - NonProduction
-  - ApplicationHello world
+- Name: Non-Production
+
+- Name: Production
