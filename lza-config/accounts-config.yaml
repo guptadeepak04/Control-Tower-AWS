@@ -1,0 +1,20 @@
+accounts:
+  - name: Audit
+    email: d04gupta04+audit@gmail.com
+    organizationalUnit: Security
+
+  - name: LogArchive
+    email: d04gupta04+log@gmail.com
+    organizationalUnit: Security
+
+  - name: Dev
+    email: d04gupta04+dev@gmail.com
+    organizationalUnit: Non-Production
+
+  - name: Test
+    email: d04gupta04+test@gmail.com
+    organizationalUnit: Non-Production
+
+  - name: Prod
+    email: d04gupta04+prod@gmail.com
+    organizationalUnit: Production

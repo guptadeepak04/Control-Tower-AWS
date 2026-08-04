@@ -1,0 +1,11 @@
+organizationalUnits:
+
+- Name: Security
+
+- Name: Infrastructure
+
+- Name: Sandbox
+
+- Name: Non-Production
+
+- Name: Production
