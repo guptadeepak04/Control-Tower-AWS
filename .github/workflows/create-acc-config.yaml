@@ -1,0 +1,52 @@
+name: Create AWS Accounts
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-accounts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Create Audit Account
+        run: |
+          aws organizations create-account \
+            --email d04gupta04+audit@gmail.com \
+            --account-name Audit \
+            --role-name OrganizationAccountAccessRole
+
+      - name: Create LogArchive Account
+        run: |
+          aws organizations create-account \
+            --email d04gupta04+log@gmail.com \
+            --account-name LogArchive \
+            --role-name OrganizationAccountAccessRole
+
+      - name: Create Dev Account
+        run: |
+          aws organizations create-account \
+            --email d04gupta04+dev@gmail.com \
+            --account-name Dev \
+            --role-name OrganizationAccountAccessRole
+
+      - name: Create Test Account
+        run: |
+          aws organizations create-account \
+            --email d04gupta04+test@gmail.com \
+            --account-name Test \
+            --role-name OrganizationAccountAccessRole
+
+      - name: Create Prod Account
+        run: |
+          aws organizations create-account \
+            --email d04gupta04+prod@gmail.com \
+            --account-name Prod \
+            --role-name OrganizationAccountAccessRole
