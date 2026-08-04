@@ -1,7 +1,8 @@
-""name: Create Organizational Units
+name: Create Organizational Units
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:clear
+
 
 jobs:
   create-ou:
@@ -53,5 +54,3 @@ jobs:
           aws organizations create-organizational-unit \
           --parent-id $ROOT_ID \
           --name Production
-
-""
