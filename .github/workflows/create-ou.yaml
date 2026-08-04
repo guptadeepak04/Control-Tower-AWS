@@ -1,7 +1,7 @@
 name: Create Organizational Units
 
 on:
-  workflow_dispatch:clear
+  workflow_dispatch:
 
 
 jobs:
